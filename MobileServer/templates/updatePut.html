@@ -1,0 +1,102 @@
+{% extends 'flask_user/_public_base.html' %}
+
+{% block content %}
+<head>
+    <script src="/static/js/libs/jquery-3.3.1.js" ></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/libs/bootstrap.min.js" ></script>
+    <script src="/static/js/fillForm.js" ></script>
+</head>
+
+
+<br>
+<div>
+<form action="/">
+  <button type="submit" class="btn btn-dark">Index (todos)</button>
+</form>
+    <br>
+    <form action="/biblioteca">
+  <button type="submit" class="btn btn-dark">Biblioteca (users)</button>
+</form>
+    <br>
+     <form action="/nuevolibro">
+  <button type="submit" class="btn btn-dark">Nuevo Libro (admin)</button>
+</form>
+<br>
+     <form action="/actualizarlibro">
+  <button type="submit" class="btn btn-dark">Modificar Libro (admin)</button>
+</form>
+</div>
+<br>
+    <form action="/actualizarconput">
+    <button type="submit" class="btn btn-dark">Modificar Libro con PUT(admin)</button>
+</form>
+<br>
+
+    #aquí empieza lo bueno
+<form action="/libro" method="PUT" enctype=multipart/form-data>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">ID del libro: </label>
+    <input name="ID"  type="text" class="form-control" id="ID" placeholder="ID">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Titulo: </label>
+    <input name="titulo"  type="text" class="form-control" id="titulo" placeholder="Titulo">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Autor: </label>
+    <input name="autor" type="text" class="form-control" id="autor" placeholder="Autor">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Género: </label>
+    <input name="genero" type="text" class="form-control" id="genero" placeholder="Género">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Nacionalidad del autor: </label>
+    <input name="nacionalidad" type="text" class="form-control" id="nacionalidad" placeholder="Nacionalidad del autor">
+  </div>
+
+<br>
+<br>
+
+<div class="custom-file">
+  <input name="archivo" type="file" class="custom-file-input" id="archivo" lang="es">
+  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+</div>
+
+<br>
+<br>
+
+    <div class="custom-file">
+  <input name="imagen" type="file" class="custom-file-input" id="imagen" lang="es">
+  <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
+</div>
+
+<br>
+<br>
+
+    <div class="custom-file">
+  <input name="fotoautor" type="file" class="custom-file-input" id="fotoautor" lang="es">
+  <label class="custom-file-label" for="customFileLang">Seleccionar Foto Autor</label>
+</div>
+
+<br>
+<br>
+
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripcion del Libro</label>
+    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+  </div>
+
+    <br>
+    <br>
+
+  <button type="submit" id="submit" class="btn btn-dark">Subir Libro</button>
+
+</form>
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <script src="/static/js/libs/jquery.min.js"></script>
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <script src="/static/js/libs/cldr.min.js"></script>
+    <script src="/static/js/libs/cldr/event.min.js"></script>
+    <script src="/static/js/libs/cldr/supplemental.min.js"></script>
+    <script src="/static/js/libs/cldr/unresolved.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/globalize.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/globalize/message.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/globalize/number.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/globalize/currency.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/globalize/date.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="https://cdn3.devexpress.com/jslib/18.1.6/css/dx.light.css" />
+    <script src="/static/js/libs/dx.all.js"></script>
+    <script src="/static/js/libs/underscore-min.js"></script>
+
+    <link rel="stylesheet" type ="text/css" href ="/static/css/style.css" />
+    <script src="/static/js/index.js"></script>
+</head>
+
+<body class="dx-viewport" style="background: #ffffff url(/static/images/geometry2.png) repeat;">
+<br><br><br>
+    <div class="demo-container" >
+        <div class="images"></div>
+        <div id="popup"></div>
+    </div>
+
+    <script id="property-item" type="text/html">
+        <div>
+            <div class="item-content">
+                <img id="house-image<%= ID %>" src="/imagen/<%= ID %>" />
+                <div class="item-options">
+                    <div>
+                        <div class="address"><%= autor %></div>
+                        <div class="price large-text"><%= titulo %></div>
+                        <div class="agent">
+                            <div id="house<%= ID %>">
+                                <br>
+                                <i class="fa fa-user" style="font-size:24px;color:white"></i><br>
+                                Autor
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="popover<%= ID %>">
+                <div class="agent-details">
+                    <img src="/fotoautor/<%= ID %>" />
+                    <div>
+                        <div class="name large-text">Nacionalidad: <%= nacionalidad %></div>
+                        <div class="phone">Autor: <%= autor %></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="property-details" type="text/html">
+        <div class="popup-property-details" style="background: #ffffff url(/static/images/geometry2.png) repeat;">
+            <div class="large-text" ><%= titulo %></div>
+            <div class="opacity"><%= autor %></div>
+            <div id="favorites" class="favorites"><a href="/archivo/<%= ID %>" download><i class="fa fa-download" style="color:white"></i><span style="color:white"> Descargar</span></a></div>
+            <div class="images">
+                <img src="/imagen/<%= ID %>" />
+            </div>
+            <div style="color: #616a6b  "><%= descripcion %></div>
+        </div>
+    </script>
+
+</body>
+</html>
