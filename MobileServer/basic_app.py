@@ -385,6 +385,29 @@ def create_app():
                                    cls=connector.AlchemyEncoder),
                         mimetype='application/json')
 
+    @app.route('/mobile_libros/<ID>', methods=['GET'])
+    def mobile_libros_id(ID):
+        db_session = db.Session(engine)
+        libros = db_session.query(entities.Libro).filter(entities.Libro.ID == ID)
+        data = []
+        for libro in libros:
+            data.append(libro)
+        print(data)
+        return Response(json.dumps({'data': data},
+                                   cls=connector.AlchemyEncoder),
+                        mimetype='application/json')
+
+    @app.route('/newUsers', methods=['GET'])
+    def newUsers():
+        db_session = db.Session(engine)
+        users = db_session.query(entities.MobileUser)
+        data = []
+        for user in users:
+            data.append(user)
+        return Response(json.dumps({'data': data},
+                                   cls=connector.AlchemyEncoder),
+                        mimetype='application/json')
+
     return app
 
 

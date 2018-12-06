@@ -76,7 +76,8 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent">
 
                 <EditText
                     android:id="@+id/password"
@@ -102,12 +103,14 @@
                 android:paddingRight="30dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
-            <Button android:id="@+id/btn_link_login"
+
+            <Button
+                android:id="@+id/btn_link_login"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_link_login"
                 android:background="@null"
-                android:textColor="@android:color/holo_green_light"/>
+                android:text="@string/btn_link_login"
+                android:textColor="@android:color/holo_blue_dark" />
 
 
         </LinearLayout>

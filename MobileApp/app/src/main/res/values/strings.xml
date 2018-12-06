@@ -22,4 +22,8 @@
     <string name="error_invalid_username">The username is to short</string>
     <string name="login">Login</string>
     <string name="btn_link_register">DON\'T HAVE AN ACCOUNT? REGISTER.</string>
+
+    <string name="title_activity_start">StartActivity</string>
+    <string name="dummy_button">Start</string>
+    <string name="dummy_content">ONLINE LIBRARY \nPERU</string>
 </resources>

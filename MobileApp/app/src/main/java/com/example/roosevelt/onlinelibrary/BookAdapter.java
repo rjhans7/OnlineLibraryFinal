@@ -21,13 +21,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>
 {
     public JSONArray elements;
     private Context context;
-    public String bookId;
 
-    public BookAdapter(JSONArray elements, Context context, String bookId)
+
+    public BookAdapter(JSONArray elements, Context context)
     {
         this.elements = elements;
         this.context = context;
-        this.bookId = bookId;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
@@ -53,23 +52,35 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull BookAdapter.ViewHolder holder, int position) {
         try {
+            /*Esto lo hizo Diego. Usando el elements (jsonarray recibido como parámetro desde el BooksActivity)
+            se extraen los valores que se quieren...
+             */
             JSONObject element = elements.getJSONObject(position);
-            String name = element.getString("autor")+" - "+element.getString("genero");
-            final String username = element.getString("titulo");
+            String details = element.getString("autor")+" - "+element.getString("genero");
+            final String title = element.getString("titulo");
             final String id = element.getString("ID");
-            holder.first_line.setText(name);
-            holder.second_line.setText(username);
 
+            //... y se añaden a los holders dentro del xml
+            holder.first_line.setText(title);
+            holder.second_line.setText(details);
+
+            //Con esto los holders pueden ser clickeados
             holder.container.setOnClickListener(new View.OnClickListener(){
 
-                @Override
-                public void onClick(View v) {
-                    /*Intent goToMessage = new Intent(context,MessageActivity.class);
-                    goToMessage.putExtra("user_from_id",userFromId);
-                    goToMessage.putExtra("user_to_id",id);
-                    goToMessage.putExtra("username", username);
-                    context.startActivity(goToMessage);*/
+                //Esta parte define lo que pasa cuando se hace click
+                @Override //Con esto se redirige a la DisplayActivity
+                public void onClick(View v) {Intent goToDisplay = new Intent(context,DisplayActivity.class);
+
+                    /*Se añaden además otros dos parámetros: el id (para que sepa a cuál libro buscar)
+                     y el título (para ponerlo como título
+                      */
+                    goToDisplay.putExtra("ID",id);
+                    goToDisplay.putExtra("titulo", title);
+
+                    //Se inicia la DisplayActivity
+                    context.startActivity(goToDisplay);
                 }
+                //VER COMENTARIOS DEL DISPLAYACTIVITY ->
             });
 
 

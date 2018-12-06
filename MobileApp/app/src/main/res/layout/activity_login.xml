@@ -88,12 +88,14 @@
                 android:paddingRight="30dp"
                 android:text="@string/login"
                 android:textStyle="bold" />
-            <Button android:id="@+id/btn_link_register"
+
+            <Button
+                android:id="@+id/btn_link_register"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_link_register"
                 android:background="@null"
-                android:textColor="@android:color/holo_green_light"/>
+                android:text="@string/btn_link_register"
+                android:textColor="@android:color/holo_blue_dark" />
 
 
         </LinearLayout>

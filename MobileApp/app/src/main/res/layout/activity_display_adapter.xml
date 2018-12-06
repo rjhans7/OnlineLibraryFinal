@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/element_view_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="1dp"
+    >
+
+    <TextView
+        android:id="@+id/element_view_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:fontFamily="sans-serif" />
+
+
+    <TextView
+        android:id="@+id/element_view_genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/element_view_autor"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif" />
+
+
+    <TextView
+        android:id="@+id/element_view_descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/element_view_genero"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:fontFamily="sans-serif" />
+
+    <!--<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/element_view_descripcion"
+        android:id="@+id/download_btn"
+        android:layout_centerInParent="true"
+        />-->
+
+</RelativeLayout>
